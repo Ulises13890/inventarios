@@ -1,0 +1,58 @@
+const {Schema, model}=require('mongoose');
+const inventarioSchema=Schema({
+    modelo:{
+        type:String,
+        required:true,
+    },
+    serial:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+descripcion:{
+    type:String,
+    required:true,
+},
+foto_equipo:{
+    type:String,
+    required:true,
+},
+precio:{
+    type:Number,
+    required:true,
+},
+fecha_creacion:{
+    type:Date,
+    required:true,
+},
+fecha_actualizacion:{
+    type:Date,
+    required:true,
+},
+fecha_compra:{
+    type:Date,
+    required:true,
+},
+usuario:{
+    type:Schema.Types.ObjectId,
+    ref:'usuarios',
+},
+marca:{
+    type:Schema.Types.ObjectId,
+    ref:'marcas',
+    required:true,
+},
+tipoEquipo:{
+    type:Schema.Types.ObjectId,
+    ref:'tipos_equipos',
+    required:true,
+},
+estadoEquipos:{
+    type:Schema.Types.ObjectId,
+    ref:'estado_equipos',
+    required:true,
+},
+
+});
+
+module.exports=model('inventarios',inventarioSchema);
