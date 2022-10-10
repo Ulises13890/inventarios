@@ -12,26 +12,26 @@ getConnection();
 //leer json
 app.use(express.json());
 
-//enrutar inventario a http://localhost:3000/inventario/
+//enrutar inventario a http://localhost:4000/inventario/
 const inventario=require('./routes/inventario');
 app.use('/inventario',inventario);
 
-//enrutar estado de equipos a http://localhost:3000/estado/
+//enrutar estado de equipos a http://localhost:4000/estado/
 const est=require('./routes/estadoEquipos');
 app.use('/estado',est);
 
-//enrutar usuarios a http://localhost:3000/usuario/
+//enrutar usuarios a http://localhost:4000/usuario/
 const user=require('./routes/usuarios');
 app.use('/usuario',user);
 
-//enrutar usuarios a http://localhost:3000/marca/
+//enrutar usuarios a http://localhost:4000/marca/
 const marc=require('./routes/marca');
 app.use('/marca',marc);
 
-//enrutar usuarios a http://localhost:3000/tipo/
+//enrutar usuarios a http://localhost:4000/tipo/
 const typer=require('./routes/tipoEquipo');
 app.use('/tipo',typer);
 
-app.listen(3000,function(){
-    console.log('aplicacion corriendo en el puerto 3000');
+app.listen(4000,function(){
+    console.log('aplicacion corriendo en el puerto 4000');
 });
